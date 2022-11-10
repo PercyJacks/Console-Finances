@@ -122,3 +122,8 @@ for (var i = 0; i < monthlyChangeInProfit.length; i++) {
 }
 
 var averageChangesProfitLossesOverPeriod = sumOfMonthlyChangeInProfit / totalNumMonths;
+
+// In order to use array with Math.max you need to add the "...". This is known as a spread operator!
+// Get the greatest increase and decrease using Math.max and Math.min
+var greatestIncreaseInProfits = Math.max(...monthlyChangeInProfit);
+var greatestDecreaseInProfits = Math.min(...monthlyChangeInProfit);
