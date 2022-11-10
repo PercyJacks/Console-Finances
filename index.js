@@ -123,6 +123,9 @@ for (var i = 0; i < monthlyChangeInProfit.length; i++) {
 
 var averageChangesProfitLossesOverPeriod = sumOfMonthlyChangeInProfit / totalNumMonths;
 
+// Use Math.round, multiplication and division to round to 2 decimal places
+var roundedAverageChangesProfitLossesOverPeriod = Math.round((averageChangesProfitLossesOverPeriod + Number.EPSILON) * 100) / 100;
+
 // In order to use array with Math.max you need to add the "...". This is known as a spread operator!
 // Get the greatest increase and decrease using Math.max and Math.min
 var greatestIncreaseInProfits = Math.max(...monthlyChangeInProfit);
@@ -159,7 +162,7 @@ console.log("Total Months: " + totalNumMonths);
 
 console.log("Total: $" + sumOfProfitsLosses);
 
-console.log("Average Change: $" + Math.round((averageChangesProfitLossesOverPeriod + Number.EPSILON) * 100) / 100)
+console.log("Average Change: $" + roundedAverageChangesProfitLossesOverPeriod);
 
 console.log(`Greatest Increase in Profits: ${monthOfGreatestIncrease} ($${greatestIncreaseInProfits})`);
 
