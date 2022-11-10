@@ -137,3 +137,14 @@ var monthOfGreatestIncrease = correspondingMonths[indexOfGreatestIncrease];
 // Repeat the same for the greatest decrease
 var indexOfGreatestDecrease = monthlyChangeInProfit.findIndex((element) => element === greatestDecreaseInProfits);
 var monthOfGreatestDecrease = correspondingMonths[indexOfGreatestDecrease];
+
+// Proof of the greatest increase month - value pair
+// console.log(monthlyChangeInProfit.length);
+// console.log(correspondingMonths.length);
+
+// console.log(monthOfGreatestIncrease,greatestIncreaseInProfits);
+// console.log(monthOfGreatestDecrease,greatestDecreaseInProfits);
+// console.log("------------------------------")
+// for (var i = 0; i < monthlyChangeInProfit.length; i++) {
+//   console.log(correspondingMonths[i],monthlyChangeInProfit[i]);
+// }
