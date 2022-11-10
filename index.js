@@ -97,3 +97,11 @@ var sumOfProfitsLosses = 0;
 for (var i = 0; i < finances.length; i++) {
   sumOfProfitsLosses += finances[i][1];
 }
+
+// Calculate the average of the changes in Profit/Losses over the entire period.
+
+// Test that my logic works as intended
+// test = [1,2,3,4,5,6,7,8,9,10];
+// for (var i = 0; i < test.length-1; i++) {
+//   console.log(test[i], test[i+1]);
+// }
