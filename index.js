@@ -105,3 +105,15 @@ for (var i = 0; i < finances.length; i++) {
 // for (var i = 0; i < test.length-1; i++) {
 //   console.log(test[i], test[i+1]);
 // }
+
+// Track the change in profit across the months
+var monthlyChangeInProfit = [];
+// Track the month for the change in profit
+var correspondingMonths = [];
+
+for (var i = 0; i < finances.length-1; i++) {
+  monthlyChangeInProfit.push(finances[i+1][1]-finances[i][1]);
+  correspondingMonths.push(finances[i+1][0]);
+}
+
+
