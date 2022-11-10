@@ -116,4 +116,7 @@ for (var i = 0; i < finances.length-1; i++) {
   correspondingMonths.push(finances[i+1][0]);
 }
 
-
+var sumOfMonthlyChangeInProfit = 0;
+for (var i = 0; i < monthlyChangeInProfit.length; i++) {
+  sumOfMonthlyChangeInProfit += monthlyChangeInProfit[i];
+}
