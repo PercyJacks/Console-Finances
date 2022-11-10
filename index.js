@@ -148,3 +148,19 @@ var monthOfGreatestDecrease = correspondingMonths[indexOfGreatestDecrease];
 // for (var i = 0; i < monthlyChangeInProfit.length; i++) {
 //   console.log(correspondingMonths[i],monthlyChangeInProfit[i]);
 // }
+
+// Display results in the console
+
+console.log("Financial Analysis");
+
+console.log("----------------------------");
+
+console.log("Total Months: " + totalNumMonths);
+
+console.log("Total: $" + sumOfProfitsLosses);
+
+console.log("Average Change: $" + Math.round((averageChangesProfitLossesOverPeriod + Number.EPSILON) * 100) / 100)
+
+console.log(`Greatest Increase in Profits: ${monthOfGreatestIncrease} ($${greatestIncreaseInProfits})`);
+
+console.log(`Greatest Decrease in Profits: ${monthOfGreatestDecrease} ($${greatestDecreaseInProfits})`);
