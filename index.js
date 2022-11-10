@@ -120,3 +120,5 @@ var sumOfMonthlyChangeInProfit = 0;
 for (var i = 0; i < monthlyChangeInProfit.length; i++) {
   sumOfMonthlyChangeInProfit += monthlyChangeInProfit[i];
 }
+
+var averageChangesProfitLossesOverPeriod = sumOfMonthlyChangeInProfit / totalNumMonths;
