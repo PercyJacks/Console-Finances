@@ -127,3 +127,9 @@ var averageChangesProfitLossesOverPeriod = sumOfMonthlyChangeInProfit / totalNum
 // Get the greatest increase and decrease using Math.max and Math.min
 var greatestIncreaseInProfits = Math.max(...monthlyChangeInProfit);
 var greatestDecreaseInProfits = Math.min(...monthlyChangeInProfit);
+
+// To get the month for the greatest increase use findIndex
+// findIndex takes in a function so use arrow function to check that the element is equivalent to the greatest increase in profits
+var indexOfGreatestIncrease = monthlyChangeInProfit.findIndex((element) => element === greatestIncreaseInProfits);
+// Check the corresponding months array to see which month that increase occurred in
+var monthOfGreatestIncrease = correspondingMonths[indexOfGreatestIncrease];
