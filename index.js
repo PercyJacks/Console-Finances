@@ -123,8 +123,8 @@ for (var i = 0; i < monthlyChangeInProfit.length; i++) {
 
 var averageChangesProfitLossesOverPeriod = sumOfMonthlyChangeInProfit / totalNumMonths;
 
-// Use Math.round, multiplication and division to round to 2 decimal places
-var roundedAverageChangesProfitLossesOverPeriod = Math.round((averageChangesProfitLossesOverPeriod + Number.EPSILON) * 100) / 100;
+// Use toFixed() to round to 2 decimal places. Beware it turns a number into a string!
+var roundedAverageChangesProfitLossesOverPeriod = averageChangesProfitLossesOverPeriod.toFixed(2);
 
 // In order to use array with Math.max you need to add the "...". This is known as a spread operator!
 // Get the greatest increase and decrease using Math.max and Math.min
