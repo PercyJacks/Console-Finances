@@ -165,7 +165,7 @@ var monthOfGreatestDecrease = correspondingMonths[indexOfGreatestDecrease];
 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 // I have structured my answer in the way shown above because I thought it would be easier to follow if everything had clear variable names
-// and was all separated out. Another way to solve it all in one would be:
+// and was all separated out. I also wanted to practice using the Math library. Another way to solve it all in one would be:
 
 // var totalNumMonths = finances.length;
 // var sumOfProfitsLosses = 0;
