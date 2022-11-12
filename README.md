@@ -5,7 +5,7 @@ This challenge demonstrates the use of javascript to analyse financial data. It 
 
 # Challenges
 
-The main challenge was getting my head around the instructions! I spent more time reading the instructions than i did coding up my proposed solution!
+The main challenge was getting my head around the instructions! I spent more time reading the instructions than I did coding up my proposed solution!
 
 # Things I learned
 
