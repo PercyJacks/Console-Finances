@@ -121,7 +121,11 @@ for (var i = 0; i < monthlyChangeInProfit.length; i++) {
   sumOfMonthlyChangeInProfit += monthlyChangeInProfit[i];
 }
 
-var averageChangesProfitLossesOverPeriod = sumOfMonthlyChangeInProfit / totalNumMonths;
+// For this average, since we do not know what the profit was for the month prior to Jan-2010, I am not including it in the calculation
+var averageChangesProfitLossesOverPeriod = sumOfMonthlyChangeInProfit / (totalNumMonths - 1);
+
+// If I made the assumption that the profit for the month prior to Jan-2010 was 0 then i would do:
+// var averageChangesProfitLossesOverPeriod = (sumOfMonthlyChangeInProfit + finances[0][1]) / (totalNumMonths).toFixed(2); // = 7803.48
 
 // Use toFixed() to round to 2 decimal places. Beware it turns a number into a string!
 var roundedAverageChangesProfitLossesOverPeriod = averageChangesProfitLossesOverPeriod.toFixed(2);
@@ -153,17 +157,10 @@ var monthOfGreatestDecrease = correspondingMonths[indexOfGreatestDecrease];
 // }
 
 // Display results in the console
+var log = "Financial Analysis \n" + "---------------------------- \n" +
+"Total Months: " + totalNumMonths + "\n" + "Total: $" + sumOfProfitsLosses + "\n" +
+"Average Change: $" + roundedAverageChangesProfitLossesOverPeriod + "\n" +
+`Greatest Increase in Profits: ${monthOfGreatestIncrease} ($${greatestIncreaseInProfits})` + "\n" +
+`Greatest Decrease in Profits: ${monthOfGreatestDecrease} ($${greatestDecreaseInProfits})`
 
-console.log("Financial Analysis");
-
-console.log("----------------------------");
-
-console.log("Total Months: " + totalNumMonths);
-
-console.log("Total: $" + sumOfProfitsLosses);
-
-console.log("Average Change: $" + roundedAverageChangesProfitLossesOverPeriod);
-
-console.log(`Greatest Increase in Profits: ${monthOfGreatestIncrease} ($${greatestIncreaseInProfits})`);
-
-console.log(`Greatest Decrease in Profits: ${monthOfGreatestDecrease} ($${greatestDecreaseInProfits})`);
+console.log(log);
