@@ -156,6 +156,9 @@ var monthOfGreatestDecrease = correspondingMonths[indexOfGreatestDecrease];
 //   console.log(correspondingMonths[i],monthlyChangeInProfit[i]);
 // }
 
+// If we are after the month-value pair from the original dataset then you can do this multiple ways, one way is:
+// finances.forEach((i) => {if((i[0] === monthOfGreatestIncrease)||(i[0] === monthOfGreatestDecrease)) {console.log(i);}});
+
 // Display results in the console
 var log = "Financial Analysis \n" + "---------------------------- \n" +
 "Total Months: " + totalNumMonths + "\n" + "Total: $" + sumOfProfitsLosses + "\n" +
