@@ -159,11 +159,86 @@ var monthOfGreatestDecrease = correspondingMonths[indexOfGreatestDecrease];
 // If we are after the month-value pair from the original dataset then you can do this multiple ways, one way is:
 // finances.forEach((i) => {if((i[0] === monthOfGreatestIncrease)||(i[0] === monthOfGreatestDecrease)) {console.log(i);}});
 
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+// I have structured my answer in the way shown above because I thought it would be easier to follow if everything had clear variable names
+// and was all separated out. Another way to solve it all in one would be:
+
+// var totalNumMonths = finances.length;
+// var sumOfProfitsLosses = 0;
+// var average = 0;
+// var last_profit = 0;
+// var current_profit = 0;
+// var profit_change = 0;
+// var greatest_increase = 0;
+// var increase_index = 0;
+// var greatest_decrease = 0;
+// var decrease_index = 0;
+
+// for (var i=0; i < finances.length; i++) {
+//   current_profit = finances[i][1]
+//   sumOfProfitsLosses += finances[i][1];
+//   profit_change =  current_profit - last_profit;
+//   average += profit_change;
+//   if (profit_change > greatest_increase) {
+//     greatest_increase = profit_change;
+//     increase_index = i;
+//   }
+//   if (profit_change < greatest_decrease) {
+//     greatest_decrease = profit_change;
+//     decrease_index = i;
+//   }
+//   last_profit = current_profit;
+// }
+// average = (average / totalNumMonths).toFixed(2); // This method assumes the profit prior to Jan 2010 is 0 and so includes the profit gained in Jan into the calculation!
+// var log = `Financial Analysis \n` +
+// `---------------------------- \n` +
+// `Total Months: ${totalNumMonths} \n` +
+// `Total: $${sumOfProfitsLosses} \n` +
+// `Average Change: $${average} \n` +
+// `Greatest Increase in Profits: ${finances[increase_index][0]} ($${greatest_increase}) \n` +
+// `Greatest Decrease in Profits: ${finances[decrease_index][0]} ($${greatest_decrease})`
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+// If the TA's solution is indeed what we were after then it would be done in the following way:
+// Instead of calculating the largest increase in profits, compute whether the profit change (increase/decrease) is larger than
+// the profit of that month. And print the month + profit/loss that month (not profit increase/decrease for that month)
+
+// for (var i=0; i < finances.length; i++) {
+//   current_profit = finances[i][1]
+//   sumOfProfitsLosses += finances[i][1];
+//   profit_change =  current_profit - last_profit;
+//   average += profit_change;
+//   if (profit_change > greatest_increase) {
+//     greatest_increase = current_profit;
+//     increase_index = i;
+//   }
+//   if (profit_change < greatest_decrease) {
+//     greatest_decrease = current_profit;
+//     decrease_index = i;
+//   }
+//   last_profit = current_profit;
+// }
+// average = (average / totalNumMonths).toFixed(2);
+
+// var log = `Financial Analysis \n` +
+// `---------------------------- \n` +
+// `Total Months: ${totalNumMonths} \n` +
+// `Total: $${sumOfProfitsLosses} \n` +
+// `Average Change: $${average} \n` +
+// `Greatest Increase in Profits: ${finances[increase_index][0]} ($${finances[increase_index][1]}) \n` +
+// `Greatest Decrease in Profits: ${finances[decrease_index][0]} ($${finances[decrease_index][1]})`
+
 // Display results in the console
-var log = "Financial Analysis \n" + "---------------------------- \n" +
-"Total Months: " + totalNumMonths + "\n" + "Total: $" + sumOfProfitsLosses + "\n" +
-"Average Change: $" + roundedAverageChangesProfitLossesOverPeriod + "\n" +
-`Greatest Increase in Profits: ${monthOfGreatestIncrease} ($${greatestIncreaseInProfits})` + "\n" +
+
+var log = `Financial Analysis \n` +
+`---------------------------- \n` +
+`Total Months: ${totalNumMonths} \n` +
+`Total: $${sumOfProfitsLosses} \n` +
+`Average Change: $${roundedAverageChangesProfitLossesOverPeriod} \n` +
+`Greatest Increase in Profits: ${monthOfGreatestIncrease} ($${greatestIncreaseInProfits}) \n` +
 `Greatest Decrease in Profits: ${monthOfGreatestDecrease} ($${greatestDecreaseInProfits})`
 
 console.log(log);
